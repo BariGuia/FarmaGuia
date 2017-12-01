@@ -66,6 +66,7 @@ export class ListaTurnosPage implements OnInit{
     if(hoy==dia){    
       this.dataService.obtenerFarmaciasdeturno().subscribe((farma)=>{
         this.turno1=farma;
+        console.log("farma turnos",this.turno1);
         for(let datos of this.turno1 ){//busca las farmacias de turno 24 hs
           if (datos.id==id1|| datos.id==id2){
             this.turno2.push(datos);

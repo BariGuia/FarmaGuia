@@ -41,9 +41,8 @@ webpackEmptyAsyncContext.id = 166;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__home_home__ = __webpack_require__(211);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__lista_lista__ = __webpack_require__(214);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__lista2_lista2__ = __webpack_require__(215);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__lista_turnos_lista_turnos__ = __webpack_require__(216);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__lista2_lista2__ = __webpack_require__(215);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__lista_turnos_lista_turnos__ = __webpack_require__(216);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -57,18 +56,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var TabsPage = (function () {
+    //tab4Root =ListaPage;
     function TabsPage() {
         this.tab1Root = __WEBPACK_IMPORTED_MODULE_1__home_home__["a" /* HomePage */];
-        this.tab2Root = __WEBPACK_IMPORTED_MODULE_3__lista2_lista2__["a" /* Lista2Page */];
-        this.tab3Root = __WEBPACK_IMPORTED_MODULE_4__lista_turnos_lista_turnos__["a" /* ListaTurnosPage */];
-        this.tab4Root = __WEBPACK_IMPORTED_MODULE_2__lista_lista__["a" /* ListaPage */];
+        this.tab2Root = __WEBPACK_IMPORTED_MODULE_2__lista2_lista2__["a" /* Lista2Page */];
+        this.tab3Root = __WEBPACK_IMPORTED_MODULE_3__lista_turnos_lista_turnos__["a" /* ListaTurnosPage */];
     }
     return TabsPage;
 }());
 TabsPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/home/jorge/sistemas 2017/tesina/FarmaGuia/src/pages/tabs/tabs.html"*/'<ion-tabs>\n  <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>\n  <ion-tab [root]="tab2Root" tabTitle="Farmacias" tabIcon="person"></ion-tab>\n  <!--<ion-tab [root]="tab4Root" tabTitle="Farmacia" tabIcon="medkit"></ion-tab>-->\n  <ion-tab [root]="tab3Root" tabTitle="Turnos" tabIcon="medical"></ion-tab>\n  \n</ion-tabs>\n'/*ion-inline-end:"/home/jorge/sistemas 2017/tesina/FarmaGuia/src/pages/tabs/tabs.html"*/
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/home/jorge/sistemas 2017/tesina/FarmaGuia/src/pages/tabs/tabs.html"*/'<ion-tabs>\n  <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>\n  <ion-tab [root]="tab2Root" tabTitle="Farmacias" tabIcon="person"></ion-tab>\n   <ion-tab [root]="tab3Root" tabTitle="Turnos" tabIcon="medical"></ion-tab>\n  \n</ion-tabs>\n'/*ion-inline-end:"/home/jorge/sistemas 2017/tesina/FarmaGuia/src/pages/tabs/tabs.html"*/
     }),
     __metadata("design:paramtypes", [])
 ], TabsPage);
@@ -839,6 +837,7 @@ var ListaTurnosPage = (function () {
         if (hoy == dia) {
             this.dataService.obtenerFarmaciasdeturno().subscribe(function (farma) {
                 _this.turno1 = farma;
+                console.log("farma turnos", _this.turno1);
                 for (var _i = 0, _a = _this.turno1; _i < _a.length; _i++) {
                     var datos = _a[_i];
                     if (datos.id == id1 || datos.id == id2) {
@@ -861,11 +860,10 @@ ListaTurnosPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["n" /* Component */])({
         selector: 'page-lista-turnos',template:/*ion-inline-start:"/home/jorge/sistemas 2017/tesina/FarmaGuia/src/pages/lista-turnos/lista-turnos.html"*/'\n<ion-header>\n  \n    <ion-navbar>\n      <ion-title>Farmacias de Turno Hoy</ion-title>\n    </ion-navbar>\n  \n  </ion-header>\n  \n  \n  <ion-content padding>\n\n\n    <ion-card *ngFor="let turnos of turno2 let Tid = index"\n    (click)="detalles(turnos)">\n      <div class="farmacia">\n          <ion-row text-center>\n            <ion-col col-3>\n                <img  src="assets/img/cruzAzul.png">\n            </ion-col>\n            <ion-col>\n              <h1><b>{{turnos.nombre}}</b></h1>\n              <br>{{turnos.direccion}} <br> {{turnos.telefono}}\n              <h3 *ngIf="(Tid!==2)"><b>Abierto las 24 Horas</b> de 9:00  a 9:00</h3>\n              <h3 *ngIf="!(Tid!==2)"><b>Abierto hasta las 23:00 </b>de 9:00  a 23:00</h3>\n            </ion-col>\n          </ion-row>\n      </div>\n    </ion-card>\n     <!-- <ion-list>\n        <ion-item  *ngFor="let turnos of turno2 " >\n          <ion-avatar class= "beat animateImage" item-start>\n            <img  src="assets/img/cruzAzul.png">-->\n            \n            <!--<img  src="{{farmacias.image[2].imagen2}}"> -->\n         <!-- </ion-avatar>\n          <div class="beat animateImage"  >\n            <h2><b>{{turnos.nombre}}</b></h2>\n           <br>{{turnos.direccion}}  {{turnos.telefono}}\n           \n          </div>\n        </ion-item>\n      </ion-list>-->\n    \n  </ion-content>\n  '/*ion-inline-end:"/home/jorge/sistemas 2017/tesina/FarmaGuia/src/pages/lista-turnos/lista-turnos.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_3__providers_dataservice__["a" /* Dataservice */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__providers_dataservice__["a" /* Dataservice */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_dataservice__["a" /* Dataservice */]) === "function" && _c || Object])
 ], ListaTurnosPage);
 
+var _a, _b, _c;
 //# sourceMappingURL=lista-turnos.js.map
 
 /***/ }),

@@ -70,7 +70,7 @@
     {
         "id":3 ,
         "nombre": "Angel",
-        "direccion": "San Martin 70 Loc. 4",
+        "direccion": "San Martin 472 Loc. 4",
         "telefono":"4426304",             
         "horario":
         { "lv":[
@@ -451,8 +451,8 @@
             {"start2": "17:30"},
             {"end2": "21:30"}
         ]},
-        "lat": -41.136435,
-        "lng": -71.307999,
+        "lat": -41.133655,
+        "lng": -71.307981,
         "icon": {"url":"./assets/icon/marker-pink.png"},
         "image": [
             {"imagen0":"assets/img/cruz2.png"},
@@ -550,8 +550,8 @@
             {"start2": ""},
             {"end2": ""}
         ]},
-        "lat": -41.155128,
-        "lng": -71.306436,
+        "lat": -41.155831,
+        "lng": -71.305304,
         "icon": {"url":"./assets/icon/marker-pink.png"},
         "image": [
             {"imagen0":"assets/img/cruz2.png"},
@@ -1243,8 +1243,8 @@
             {"start2": ""},
             {"end2": ""}
         ]},
-        "lat": -41.132322,
-        "lng": -71.315575,
+        "lat": -41.132295,
+        "lng": -71.355749,
         "icon": {"url":"./assets/icon/marker-pink.png"},
         "image": [
             {"imagen0":"assets/img/cruz2.png"},

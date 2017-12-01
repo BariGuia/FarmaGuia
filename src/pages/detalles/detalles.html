@@ -1,0 +1,55 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Detalles Farmacias</ion-title>
+  </ion-navbar>
+    <div id="detalle" class="animateText">
+      <h2><b>{{markers.nombre}}</b></h2>
+      <p>Teléfono: {{markers.telefono}}
+      <p> Dirección: {{markers.direccion}}
+      <p>Horarios
+      <p>Lunes a Viernes</p>
+      <b >  {{markers.horario.lv[0].start1}} a {{markers.horario.lv[1].end1}} </b>
+      <b *ngIf="(!markers.horario.lv[2].start2 == '')"> y {{markers.horario.lv[2].start2}} a {{markers.horario.lv[3].end2}}</b>
+      <p>Sabados</p>
+      <b >{{markers.horario.s[0].start1}} a {{markers.horario.s[1].end1}}</b>
+      <b *ngIf="(!markers.horario.s[2].start2 == '')"> y {{markers.horario.s[2].start2}} a {{markers.horario.s[3].end2}}</b>
+      <p>Domingos</p>
+      <b *ngIf="(!markers.horario.d[0].start1 == '')"> {{markers.horario.d[0].start1}} a {{markers.horario.d[1].end1}} </b>
+      <b *ngIf="(!markers.horario.d[2].start2 == '')"> y {{markers.horario.d[2].start2}} a {{markers.horario.d[3].end2}}</b>
+      <p *ngIf="(markers.horario.d[0].start1 == '')">Cerrado</p>   
+      
+    </div>
+</ion-header>
+
+<ion-content>
+    <div id="mapa" ></div>
+<!--
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+              <agm-map 
+              [latitude]="markers.lat" 
+              [longitude]="markers.lng"
+                [zoom]="17"
+                [zoomControl]="true"
+                [streetViewControl]="true"
+                [disableDefaultUI]="true"> 
+                <agm-marker 
+                [latitude]="myPosition.latitude"
+                [longitude]="myPosition.longitude"
+                [iconUrl]="'/assets/icon/marker-blue.png'">
+              </agm-marker> 
+                <agm-marker
+                  [latitude]="markers.lat" 
+                  [longitude]="markers.lng"
+                  [iconUrl]="markers.icon">
+                  <agm-info-window>{{markers.nombre}}<br>{{markers.direccion}}</agm-info-window>
+                </agm-marker> 
+                
+                
+              </agm-map>
+            </ion-col>
+          </ion-row>
+    </ion-grid>-->
+</ion-content>

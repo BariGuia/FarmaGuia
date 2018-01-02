@@ -68,11 +68,11 @@ export class MapaPage {
     if (this.tipo == 'todo') {
       this.markers = [];
       this.getCurrentPosition();
-      let toast = this.toastCtrl.create({
+     /* let toast = this.toastCtrl.create({
         message: 'todo',
         duration: 2000
       });
-      toast.present();
+      toast.present();*/
 
       this.dataService.obtenerdatos().subscribe(
         (datos) => {
@@ -83,11 +83,11 @@ export class MapaPage {
     } else if (this.tipo == 'turno') {
       this.markers = [];
       this.getCurrentPosition();
-      let toast = this.toastCtrl.create({
+     /* let toast = this.toastCtrl.create({
         message: 'turno',
         duration: 2000
       });
-      toast.present();
+      toast.present();*/
 
       this.dataService.obtenerturnos().subscribe(
         (datos) => {
@@ -147,7 +147,7 @@ export class MapaPage {
 
         //console.log('Map is ready!');
         let toast = this.toastCtrl.create({
-          message: 'Map is ready',
+          message: 'Mapa listo',
           duration: 2000
         });
         toast.present();
@@ -246,11 +246,11 @@ export class MapaPage {
       cierra1 = cierra1.replace(":", "");
     } else if (this.numeroDia == 6) {
       //muestra por pantalla si entra a lav
-      let toast = this.toastCtrl.create({
+      /*let toast = this.toastCtrl.create({
         message: 's ',
         duration: 2000
       });
-      toast.present();//borrar despues de pruebas
+      toast.present();//borrar despues de pruebas*/
       let abre = options.horario.s[0].start1;
       let cierra = options.horario.s[1].end1;
       let abre1 = options.horario.s[2].start2;
@@ -261,11 +261,11 @@ export class MapaPage {
       cierra1 = cierra1.replace(":", "");
     } else {
       //muestra por pantalla si entra a lav
-      let toast = this.toastCtrl.create({
+     /* let toast = this.toastCtrl.create({
         message: 'd',
         duration: 2000
       });
-      toast.present();//borrar despues de pruebas
+      toast.present();//borrar despues de pruebas*/
       let abre = options.horario.d[0].start1;
       let cierra = options.horario.d[1].end1;
       let abre1 = options.horario.d[2].start2;
